@@ -1,6 +1,4 @@
-import { get, post } from "../axios";
-import { UserSport } from "../models/UserSport";
-import { SportExperience } from "../models/SportExperience";
+import { get } from "../axios";
 
 export async function GetSportFilters() {
   const url = "/filters/sport";

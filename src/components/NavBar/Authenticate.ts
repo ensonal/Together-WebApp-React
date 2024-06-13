@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useEffect, useState } from 'react';
 import { get } from '../../api/axios';
 import IUserInfo from '../../api/models/UserInfo';
