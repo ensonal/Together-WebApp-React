@@ -1,10 +1,9 @@
-import { Routes as BaseRoutes, Route, Outlet } from "react-router-dom";
+import { Routes as BaseRoutes, Route, Outlet, useLocation } from "react-router-dom";
 import { NavBar } from "../components/NavBar/NavBar";
 import { RegisterPage } from "../routes/Register/RegisterPage";
 import { LoginPage } from "./Login/LoginPage";
 import { MyProfilePage } from "../routes/MyProfile/MyProfilePage";
 import { CreateEventPage } from "../routes/CreateEvent/CreateEventPage";
-import { useLocation } from "react-router-dom";
 import { VerticalNavBar } from "../components/VerticalNavBar/VerticalNavBar";
 import { useEffect, useState } from "react";
 import { EventsPage } from "./EventHome/EventsPage";
@@ -27,7 +26,7 @@ export default function Routes() {
   const isRegisterOrLogin =
     location.pathname === "/register" || location.pathname === "/login";
   const isChat = location.pathname === "/chat";
-  const isLandingPage = location.pathname === "/" ? true : false;
+  const isLandingPage = location.pathname === "/" || location.pathname === "/index.html";
 
   useEffect(() => {
     const handleResize = () => {
