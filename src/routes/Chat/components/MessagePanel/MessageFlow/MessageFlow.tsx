@@ -17,7 +17,10 @@ export function MessageFlow({ roomId }: any) {
       allMessages.sort((a, b) => new Date(a.sentDate).getTime() - new Date(b.sentDate).getTime());
       setMessages(allMessages);
     };
-    fetchMessages();
+
+    const intervalId = setInterval(fetchMessages, 500);
+
+    return () => clearInterval(intervalId);
   }, [roomId]);
 
   return (
